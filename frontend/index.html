@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <script src="app.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center"
+  >
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full text-center">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">URL Shortener</h1>
+      <form id="shorten-form" class="space-y-4">
+        <div class="text-left">
+          <label
+            for="url"
+            class="block text-gray-700 font-medium mb-2 text-left"
+            >Enter URL</label
+          >
+          <input
+            type="text"
+            id="url"
+            name="url"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+            placeholder="https://example.com"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-200"
+        >
+          Shorten URL
+        </button>
+      </form>
+      <div
+        id="shortened-link"
+        class="mt-6 hidden bg-gray-100 border border-gray-300 p-4 rounded-md"
+      >
+        <p class="text-gray-700 font-medium">Shortened URL:</p>
+        <div class="flex justify-between items-center">
+          <a
+            id="shortened-url"
+            href="#"
+            class="text-blue-600 font-bold underline hover:text-blue-800 break-words flex-grow"
+            target="_blank"
+          ></a>
+          <button
+            id="copy-btn"
+            class="ml-4 bg-gray-200 text-gray-700 px-2 py-1 rounded hover:bg-gray-300"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
